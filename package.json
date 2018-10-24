@@ -9,10 +9,15 @@
   },
   "scripts": {},
   "dependencies": {
+    "babel": "^6.23.0",
     "body-parse": "^0.1.0",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
-    "mongoose": "^5.3.6"
+    "mongoose": "^5.3.6",
+    "nodemon": "^1.18.4",
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0",
+    "webpack": "^4.23.0"
   },
   "devDependencies": {
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor"
