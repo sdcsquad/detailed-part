@@ -1,2 +1,4 @@
 # detailed-part
-detail contents for each items
+>detail body contents for each items
+
+It contains title(address), price, and other details.  
