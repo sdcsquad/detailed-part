@@ -30,7 +30,7 @@ const detailedSchema = new mongoose.Schema({
 		},
 		construction:{
 			typeAndStyle: {type: String},
-			dates:{type:  }{
+			dates:{
 				builtIn: {type: Date},
 				remodel: {type: Date} 
 			},
