@@ -1,14 +1,6 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/detailed-part');
+const mongoUri = 'mongodb://localhost/detailed-part';
 
-const db = mongoose.connection;
+const db = mongoose.connect(mongoUri);
 
-db.on('error', console.error);
-db.once('open', () => {
-	console.log('mongodb')
-})
-
-const detailedSchema = require('./schema.js');
-let DetailDb = mongoose.model('detailDb', detailedSchema);
-
-module.exports.db = db;
+module.exports = db;

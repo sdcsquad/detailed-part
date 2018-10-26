@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const detailedSchema = mongoose.Schema({
+const detailedSchema = new mongoose.Schema({
 	_id: Number,
 	address: String,
 	price: Number,
@@ -7,7 +7,7 @@ const detailedSchema = mongoose.Schema({
 	details: {
 		factsAndFeatures:{
 			type: String,
-			yearBuilt: Number,
+			yearBuilt: Date,
 			heating: String,
 			cooling: String,
 			parking: String,
@@ -62,4 +62,4 @@ const detailedSchema = mongoose.Schema({
 	}
 })
 
-module.exports.detailedSchema = detailedSchema;
+module.exports = detailedSchema;
