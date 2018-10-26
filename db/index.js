@@ -10,3 +10,5 @@ db.once('open', () => {
 
 const detailedSchema = require('./schema.js');
 let DetailDb = mongoose.model('detailDb', detailedSchema);
+
+module.exports.db = db;

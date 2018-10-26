@@ -1,4 +1,6 @@
+const mongoose = require('mongoose');
 const detailedSchema = mongoose.Schema({
+	_id: Number,
 	address: String,
 	price: Number,
 	body: String,
@@ -42,7 +44,7 @@ const detailedSchema = mongoose.Schema({
 			lot: {
 				lot: Number,
 				lotWidth: Number
-			}
+			},
 			other: String
 		},
 		parking: String,
@@ -60,4 +62,4 @@ const detailedSchema = mongoose.Schema({
 	}
 })
 
-module.exports detailedSchema = detailedSchema;
+module.exports.detailedSchema = detailedSchema;

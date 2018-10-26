@@ -1,0 +1,25 @@
+@import "_grid";
+@import "_header";
+@import "main-contents";
+@import "modules";
+@import "_variables";
+@import "_cal";
+
+main{
+  font-family: $main-font-family;
+}
+.title{
+  font-size: $main-title-font-size;
+  font-weight: $thick-font-weight;
+}
+.sub-title{
+  font-size: $sub-title-font-size;
+}
+.body{
+  font-size: $body-font-size;
+  line-height: $regular-line-height;
+}
+
+.label{
+  font-weight: $thick-font-weight;
+}
