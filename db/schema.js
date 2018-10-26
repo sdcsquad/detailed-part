@@ -41,7 +41,7 @@ const detailedSchema = new mongoose.Schema({
 			other: {type: String}
 		},
 		exteriorFeatures:{
-			lot:{type:  }{
+			lot:{
 				lot: {type: Number},
 				lotWidth: {type: Number}
 			},
