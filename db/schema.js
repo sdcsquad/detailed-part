@@ -1,63 +1,63 @@
 const mongoose = require('mongoose');
 const detailedSchema = new mongoose.Schema({
-	_id: Number,
-	address: String,
-	price: Number,
-	body: String,
+	//idx: {type: Number, index: true, unique: true},
+	address: {type: String, unique: true},
+	price: {type: Number},
+	body: {type: String},
 	details: {
 		factsAndFeatures:{
-			type: String,
-			yearBuilt: Date,
-			heating: String,
-			cooling: String,
-			parking: String,
-			lot: Number,
-			daysOnZillow: Date,
-			pricePerSqft: Number
+			type: {type: String},
+			yearBuilt: {type: Date},
+			heating: {type: String},
+			cooling: {type: String},
+			parking: {type: String},
+			lot: {type: Number},
+			daysOnZillow: {type: Date},
+			pricePerSqft: {type: Number}
 		},
-		interiorFeatures: {
-			bedRoom: Number,
-			bathRoom: String,
-			heatingAndCooling: String,
-			basement: String,
-			flooring: Number,
-			other: String
+		interiorFeatures:{
+			bedRoom: {type: Number},
+			bathRoom: {type: String},
+			heatingAndCooling: {type: String},
+			basement: {type: String},
+			flooring: {type: Number},
+			other: {type: String}
 		},
-		spacesAndMenities: {
-			size: Number,
-			amenities: String,
-			spaces: String
+		spacesAndMenities:{
+			size: {type: Number},
+			amenities: {type: String},
+			spaces: {type: String}
 		},
 		construction:{
-			typeAndStyle: String,
-			dates: {
-				builtIn: Date,
-				remodel: Date 
+			typeAndStyle: {type: String},
+			dates:{type:  }{
+				builtIn: {type: Date},
+				remodel: {type: Date} 
 			},
-			materials: {
-				roof: String,
-				exterior: String
+			materials:{
+				roof: {type: String},
+				exterior: {type: String}
 			},
-			other: String
+			other: {type: String}
 		},
-		exteriorFeatures: {
-			lot: {
-				lot: Number,
-				lotWidth: Number
+		exteriorFeatures:{
+			lot:{type:  }{
+				lot: {type: Number},
+				lotWidth: {type: Number}
 			},
-			other: String
+			other: {type: String}
 		},
-		parking: String,
-		other: {
-			lastSold: {
-				soldDate: Date,
-				soldPrice: Number
+		parking: {type: String},
+		other:{
+			lastSold:{
+				soldDate: {type: Date},
+				soldPrice: {type: Number}
 			}
 		},
 		activityOnZillow:{
-			daysOnZillow: Date,
-			pastThirtydayView: Number,
-			savedLog: Number
+			daysOnZillow: {type: Date},
+			pastThirtydayView: {type: Number},
+			savedLog: {type: Number}
 		}
 	}
 })

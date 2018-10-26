@@ -2,9 +2,9 @@ const db = require('./index.js');
 const Detail = require('./Detail.js');
 var faker = require('faker');
 
-const dummies = [
-{
-	_id: faker.random.number({ 'min': 1, 'max': 100 }),
+const dummies = [];
+const randomize = {
+	//idx: faker.random.number({ 'min': 101, 'max': 1000 }),
 	address: faker.address.streetName(),
 	price: faker.random.number({'min': 800000, 'max': 5000000}),
 	body: faker.random.words(),
@@ -65,12 +65,16 @@ const dummies = [
 		}
 	}
 }
-]
+
+for(let i = 0; i < 101; i++){
+	dummies.push(randomize);
+}
+
+
 
 const insertDummies = function() {
 	console.log('inserting..');
-  Detail.create(dummies)
-    .then(() => db.disconnect());
+  return Detail.insertMany(dummies);
 };
 
 insertDummies();
