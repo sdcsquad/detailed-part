@@ -2,10 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import FollowFact from './FollowFact.jsx';
 import FollowDetails from './FollowDetails.jsx';
-const FollowingContents = ({details}) => (
-	<div className="following-contents">
-      <FollowFact details = {details.factsAndFeatures}/>
-      <FollowDetails details = {details}/>
+
+const FollowingContents = ({data}) => (
+  <div>
+  	<div className="following-contents">
+        <FollowFact factsAndFeatures = {data.details.factsAndFeatures}/>
+        <FollowDetails details = {data.details}/>
+    </div>
   </div>
 )
 

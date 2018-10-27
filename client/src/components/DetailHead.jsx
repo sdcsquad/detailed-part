@@ -6,7 +6,6 @@ class DetailHead extends React.Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			data: [],
             isCal: false
 		}
 	}
@@ -22,7 +21,7 @@ class DetailHead extends React.Component {
             <div>
     			<div className="detail head">
                     <div className="title zlw-lg-2-3 zlw-sm-2-2">
-                        <div className="main-title title">300 STATE ROUTE 28 Crystal Bay, NV 89402</div>
+                        <div className="main-title title">{this.props.data.address}</div>
                         <div className="sub-title title">8 beds 11 baths 16,232 sqft</div>
                     </div>
                     <div className="floater zlw-lg-1-3 zlw-sm-2-2">
@@ -34,7 +33,7 @@ class DetailHead extends React.Component {
                             <div className="price">$75,000,000</div>
                             <div className="zestimate">
                                 <span className="tooltip">Zestimate</span><sup>®</sup>
-                                :$95,397,060
+                                :${this.props.data.price}
                             </div>
                         </div>
                         <div className="calculator">

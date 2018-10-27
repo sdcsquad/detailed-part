@@ -1,6 +1,6 @@
 import React from 'react';
 
-const FollowFact = ({details}) => (
+const FollowFact = ({factsAndFeatures}) => (
 	<div>
 		<div className="follow-fact">
         <div className="features">
@@ -13,7 +13,7 @@ const FollowFact = ({details}) => (
                         </div>
                         <div className="module-text">
                             <div className="label">type</div>
-                            <div className="body">{details.type}</div>
+                            <div className="body">{factsAndFeatures.type}</div>
                         </div>
                     </div>
                     <div className="feature-module zlw-lg-1-3 zlw-sm-1-2">
@@ -22,7 +22,7 @@ const FollowFact = ({details}) => (
                         </div>
                         <div className="module-text">
                             <div className="label">Year Built</div>
-                            <div className="body">{details.yearBuilt}</div>
+                            <div className="body">{factsAndFeatures.yearBuilt}</div>
                         </div>
                     </div>
                     <div className="feature-module zlw-lg-1-3 zlw-sm-1-2">
@@ -31,7 +31,7 @@ const FollowFact = ({details}) => (
                         </div>
                         <div className="module-text">
                             <div className="label">Heating</div>
-                            <div className="body">{details.heating}</div>
+                            <div className="body">{factsAndFeatures.heating}</div>
                         </div>
                     </div>
                     <div className="feature-module zlw-lg-1-3 zlw-sm-1-2">
@@ -40,7 +40,7 @@ const FollowFact = ({details}) => (
                         </div>
                         <div className="module-text">
                             <div className="label">Cooling</div>
-                            <div className="body">{details.cooling}</div>
+                            <div className="body">{factsAndFeatures.cooling}</div>
                         </div>
                     </div>
                     <div className="feature-module zlw-lg-1-3 zlw-sm-1-2">
@@ -49,7 +49,7 @@ const FollowFact = ({details}) => (
                         </div>
                         <div className="module-text">
                             <div className="label">Parking</div>
-                            <div className="body">{details.parking}</div>
+                            <div className="body">{factsAndFeatures.parking}</div>
                         </div>
                     </div>
                     <div className="feature-module zlw-lg-1-3 zlw-sm-1-2">
@@ -58,7 +58,7 @@ const FollowFact = ({details}) => (
                         </div>
                         <div className="module-text">
                             <div className="label">Lot</div>
-                            <div className="body">{details.lot}</div>
+                            <div className="body">{factsAndFeatures.lot}</div>
                         </div>
                     </div>
                     <div className="feature-module zlw-lg-1-3 zlw-sm-1-2">
@@ -67,7 +67,7 @@ const FollowFact = ({details}) => (
                         </div>
                         <div className="module-text">
                             <div className="label">Days on Zillow</div>
-                            <div className="body">{details.daysOnZillow}</div>
+                            <div className="body">{factsAndFeatures.daysOnZillow}</div>
                         </div>
                     </div>
                     <div className="feature-module zlw-lg-1-3 zlw-sm-1-2">
@@ -76,7 +76,7 @@ const FollowFact = ({details}) => (
                         </div>
                         <div className="module-text">
                             <div className="label">Price/sqft</div>
-                            <div className="body">{details.pricePerSqft}</div>
+                            <div className="body">{factsAndFeatures.pricePerSqft}</div>
                         </div>
                     </div>
                     <div className="feature-module zlw-lg-1-3 zlw-sm-1-2">
