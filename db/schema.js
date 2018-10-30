@@ -4,6 +4,7 @@ const detailedSchema = new mongoose.Schema({
   address: {type: String},
   price: {type: Number},
   body: {type: String},
+  subTitle: {type: String},
   details: {
     factsAndFeatures: {
       type: {type: String},
@@ -13,7 +14,8 @@ const detailedSchema = new mongoose.Schema({
       parking: {type: String},
       lot: {type: Number},
       daysOnZillow: {type: Date},
-      pricePerSqft: {type: Number}
+      pricePerSqft: {type: Number},
+      saves: {type: Number}
     },
     interiorFeatures: {
       bedRoom: {type: Number},

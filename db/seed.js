@@ -7,17 +7,19 @@ const randomize = () => ({
   _index: '',
   address: faker.address.streetName(),
   price: faker.random.number({'min': 800000, 'max': 5000000}),
-  body: faker.random.words(),
+  body: faker.lorem.paragraphs(),
+  subTitle: faker.random.words(),
   details: {
     factsAndFeatures: {
       type: faker.random.words(),
       yearBuilt: faker.date.past(),
-      heating: faker.random.words(),
-      cooling: faker.random.words(),
-      parking: faker.random.words(),
+      heating: faker.random.word(),
+      cooling: faker.random.word(),
+      parking: faker.random.word(),
       lot: faker.random.number({ 'min': 10, 'max': 100 }),
       daysOnZillow: faker.date.past(),
-      pricePerSqft: faker.random.number({ 'min': 100, 'max': 1000 })
+      pricePerSqft: faker.random.number({ 'min': 100, 'max': 1000 }),
+      saves: faker.random.number({ 'min': 70, 'max': 700 })
     },
     interiorFeatures: {
       bedRoom: faker.random.number({ 'min': 1, 'max': 10 }),

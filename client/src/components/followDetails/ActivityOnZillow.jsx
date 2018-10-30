@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 
 const ActivityOnZillow = ({data}) => (
 	<div>
@@ -10,15 +11,15 @@ const ActivityOnZillow = ({data}) => (
             <div className="feature-module zlw-lg-1-2 zlw-sm-1-2">
                 <div className="module-text">
                     <div className="body">
-                        <span className="detail-module-title">Days on Zillow:</span>
-                        {data.daysOnZillow}
+                        <span className="detail-module-title">Days on Zillow: </span>
+                        {moment(data.daysOnZillow).fromNow()}
                     </div>
                     <div className="body">
-                        <span className="detail-module-title">Views in the past 30 days:</span>
+                        <span className="detail-module-title">Views in the past 30 days: </span>
                         {data.pastThirtydayView}
                     </div>
                     <div className="body">
-                        {data.savedLog}
+                        {data.savedLog} shoppers saved this home
                     </div>
                 </div>
             </div>

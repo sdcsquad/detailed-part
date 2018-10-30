@@ -10,7 +10,7 @@ const Parking = ({data}) => (
                 <div className="feature-module zlw-lg-1-2 zlw-sm-1-2">
                     <div className="module-text">
                         <div className="body">
-                            <span className="detail-module-title">Parking:</span>
+                            <span className="detail-module-title">Parking: </span>
                             {data}
                         </div>
                     </div>

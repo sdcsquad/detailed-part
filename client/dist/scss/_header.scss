@@ -5,6 +5,9 @@
   .title, .floater{
     display: inline-block;
   }
+  .main-title{
+    display: block;
+  }
 }
 
 @media (min-width: 769px){
@@ -90,18 +93,22 @@
       font-weight: bold;
       font-size: 15px
     }
+    a:hover{
+      color: #fff;
+      background: #0074e4;
+    }
     .fa-dollar-sign{
       color: #fff;
       position: relative;
       z-index: 1;
       margin-right: 7px;
       margin-left: 5px;
-      font-size: 10px;
+      font-size: 14px;
       &:after{
         content: '';
         position: absolute;
         display: block;
-        background: darken($primary-color, 5%);
+        background: $primary-color;
         width: 20px;
         height: 20px;
         border-radius: 50%;

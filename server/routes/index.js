@@ -4,7 +4,7 @@ const router = express.Router();
 const Detail = require('../../db/Detail.js');
 
 //get all details
-router.get('/details', (req, res) => {
+router.get('/homes/all/detail-information', (req, res) => {
   Detail.find({})
     .then(data => {
       res.send(data);
@@ -12,7 +12,7 @@ router.get('/details', (req, res) => {
 });
 
 //get one detail
-router.get('/details/index/:index', (req, res) => {
+router.get('/homes/:index/detail-information', (req, res) => {
   console.log(req.params);
   Detail.findOne({_index: req.params.index})
     .then(data => {

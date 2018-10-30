@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 
 const Construction = ({data}) => (
 	<div>
@@ -19,12 +20,12 @@ const Construction = ({data}) => (
                 <div className="module-text">
                     <div className="label">Dates</div>
                     <div className="body">
-                        <span className="detail-module-title">Last remodel year:</span>
-                        {data.dates.builtIn}
+                        <span className="detail-module-title">Last remodel year: </span>
+                        {moment(data.dates.builtIn).fromNow()}
                     </div>
                     <div className="body">
-                        <span className="detail-module-title">Built in</span>
-                        {data.dates.remodel}
+                        <span className="detail-module-title">Built in </span>
+                        {moment(data.dates.remodel).year()}
                     </div>
                 </div>
             </div>
@@ -32,11 +33,11 @@ const Construction = ({data}) => (
                 <div className="module-text">
                     <div className="label">Materials</div>
                     <div className="body">
-                        <span className="detail-module-title">Roof type:</span>
+                        <span className="detail-module-title">Roof type: </span>
                         {data.materials.roof}
                     </div>
                     <div className="body">
-                        <span className="detail-module-title">Exterior material:</span>
+                        <span className="detail-module-title">Exterior material: </span>
                         {data.materials.exterior}
                     </div>
                 </div>
@@ -45,7 +46,7 @@ const Construction = ({data}) => (
                 <div className="module-text">
                     <div className="label">Other Construction Features</div>
                     <div className="body">
-                        <span className="detail-module-title">Stories:</span>
+                        <span className="detail-module-title">Stories: </span>
                         {data.other}
                     </div>
                 </div>
