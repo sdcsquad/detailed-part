@@ -18,7 +18,7 @@ const DetailHead = (props) => (
                     <div className="price">${props.data.price.toLocaleString()}</div>
                     <div className="zestimate">
                         <span className="tooltip">Zestimate</span><sup>®</sup>
-                        : ${Math.floor(props.data.price * 1.73).toLocaleString()}
+                        : ${Math.floor(props.data.price * 1.32).toLocaleString()}
                     </div>
                 </div>
                 <div className="calculator">
