@@ -1,0 +1,122 @@
+@import "_variables";
+
+// header
+.head{
+  .title, .floater{
+    display: inline-block;
+  }
+  .main-title{
+    display: block;
+  }
+}
+
+@media (min-width: 769px){
+  .floater{
+    float: right;
+  }
+}
+
+.floater{
+  .price-area{
+    margin-bottom: 15px;
+  }
+  .status{
+    font-size: 13px;
+    text-transform: uppercase;
+    line-height: $regular-line-height;
+    font-weight: $thick-font-weight;
+  }
+  .fa-circle{
+    color: darken(red, 7%);
+  }
+  .price{
+    font-size: $main-title-font-size;
+    font-weight: $thick-font-weight;
+  }
+  .zestimate{
+    font-size: 12px;
+    .tooltip{
+      border-bottom: 1px dashed lighten(#000, 80%)
+    }
+  }
+}
+.calculator{
+  .cal-head{
+    text-transform: uppercase;
+    font-size: $detail-title-font-size;
+    font-weight: $thick-font-weight;
+    line-height: $regular-line-height; 
+  }
+  .estimate{
+    display: inline-block;
+    margin-right: 5px;
+    min-width: 105px;
+    font-size: 20px;
+    font-size: calc( 1rem + 1/3rem );
+    font-weight: 400;
+  }
+  .launch{
+    display: inline-block;
+    position: relative;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    color: #444;
+    padding: 3px 5px 1px;
+    background: #fff;
+    .arrow{
+      position: relative;
+      display: inline-block;
+      width: 13px;
+    }
+    .arrow::after{
+      content: '';
+      position: absolute;
+      top: -10px;
+      right: 3px;
+      display: block;
+      width: 5px;
+      height: 5px;
+      border-right: 4px solid transparent;
+      border-left: 4px solid transparent;
+      border-top: 6px solid #000;
+    }
+  }
+  .cal-btn{
+    color: $primary-color;
+    margin-top: 15px;
+    a{
+      text-decoration: none;
+      border-color: $primary-color;
+      border: 1px solid;
+      border-radius: 5px;
+      padding: 8px 10px;
+      font-weight: bold;
+      font-size: 15px;
+      transition: 0.3s ease;
+    }
+    a:hover{
+      color: #fff;
+      background: #0074e4;
+    }
+    .fa-dollar-sign{
+      color: #fff;
+      position: relative;
+      z-index: 1;
+      margin-right: 7px;
+      margin-left: 5px;
+      font-size: 14px;
+      &:after{
+        content: '';
+        position: absolute;
+        display: block;
+        background: $primary-color;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        top: -3px;
+        left: -6px;
+        z-index: -1;
+      }
+    }
+  }
+}
