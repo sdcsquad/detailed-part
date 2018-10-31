@@ -157,3 +157,4 @@ class PopupCal extends React.Component {
 }
 
 export default PopupCal;
+module.exports =  PopupCal;
