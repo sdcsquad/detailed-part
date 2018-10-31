@@ -11,17 +11,10 @@ class PopupCal extends React.Component {
 			downPaymentPercent: 10,
 			downPayment: '',
 			resultPrice: '',
-			isCal: false
 		}
 
 		this.onChangeRouter = this.onChangeRouter.bind(this);
 	}
-
-	showCal(){
-    this.setState({
-      isCal : !this.state.isCal
-    })
-  }
 
 	componentDidMount(){
 		this.setState(
@@ -32,7 +25,7 @@ class PopupCal extends React.Component {
 
 	changeDownpaymentPercent(amount){
 		this.setState(
-			{downPaymentPercent: (this.state.initPrice / amount) * 100 },
+			{downPaymentPercent: (amount / this.state.initPrice ) * 100 },
 			() => this.paymentCalculator()
 		);
 	}
@@ -57,7 +50,7 @@ class PopupCal extends React.Component {
 
 		if(name === 'homePrice') this.setState({ initPrice: toNum }, () => this.paymentCalculator());
 		if(name === 'rate') this.setState({ interestRate: value }, () => this.paymentCalculator());
-		if(name === 'downPayment') this.setState({ downPayment: toNum }, () => this.changeDownpaymentPercent(value));	
+		if(name === 'downPayment') this.setState({ downPayment: toNum }, () => this.changeDownpaymentPercent(toNum));	
 		if(name === 'downPaymentPercent') this.setState({ downPaymentPercent: value }, () => this.changeDownpayment(value));
 		if(name === 'loanTerm') this.setState({ loanTermWord: value }, () => this.changeLoanTerm());
 		
@@ -81,12 +74,12 @@ class PopupCal extends React.Component {
 			<div>
 		    <div className="estimate">${Math.floor((this.state.resultPrice / (12 * this.state.loanTerm))).toLocaleString()}/mo</div>
 		    <div className="launch">
-		        <span className="launch-btn" onClick={this.showCal.bind(this)}></span>
+		        <span className="launch-btn" onClick={this.props.handleClick}></span>
 		        <i className="fas fa-calculator"></i>
 		        <span className="arrow"></span>
 		        {
-		        	this.state.isCal ? 
-			        <div className="popup-cal">
+		        	this.props.isCal ? 
+			        <div id="popupCal" className="popup-cal">
 			            <div className="cal-title">
 			                Estimated Monthly Payment
 			            </div>
@@ -95,9 +88,7 @@ class PopupCal extends React.Component {
 			                    <div className="banner-text">
 			                        Your payment:
 			                        <b>
-						                	<span className="cal-payment">
-						                		$ {Math.floor((this.state.resultPrice / (12 * this.state.loanTerm))).toLocaleString()}
-						                	</span>/mo
+						                	<span className="cal-payment"> ${Math.floor((this.state.resultPrice / (12 * this.state.loanTerm))).toLocaleString()}</span>/mo
 						                </b>
 			                    </div>
 			                    <div className="cal-btn">
@@ -105,7 +96,7 @@ class PopupCal extends React.Component {
 			                    </div>
 			                </div>
 			                <div className="sub-text">
-			                    Estimated taxes & insurance of ${(this.state.initPrice * 0.0034).toLocaleString()} are not included.
+			                    Estimated taxes & insurance of ${Math.floor(this.state.initPrice * 0.0034).toLocaleString()} are not included.
 			                </div>
 			            </div>
 			            <div className="cal-form">

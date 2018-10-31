@@ -23,7 +23,10 @@ const DetailHead = (props) => (
                 </div>
                 <div className="calculator">
                     <div className="cal-head">Est. Mortgage</div>
-                    <PopupCal price={props.data.price} />
+                    <PopupCal 
+                        price={props.data.price} 
+                        handleClick = {props.handleClick}
+                        isCal = {props.isCal}/>
                     <div className="cal-btn">
                         <a href="#"><i className="fas fa-dollar-sign"></i> Get pre-qualified</a>
                     </div>

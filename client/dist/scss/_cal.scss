@@ -1,12 +1,19 @@
 @import "_variables";
 
+@media (max-width: 768px){
+	.launch-btn{
+		display: none;
+	}
+}
 .launch{
 	position: relative;
+  cursor: pointer;
 	.launch-btn{
     padding: 13px 19px;
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 1;
 	}
 }
 .popup-cal{
@@ -26,12 +33,24 @@
 		padding-top: 20px;
 	}
 	.cal-body{
-    background-color: #cdf2db;
-    padding: 20px 0;
     text-align: center;
-
     .banner{
-    	padding-bottom: 10px;
+    	padding: 15px 0 25px;
+	    height: 100%;
+	    background-color: #cdf2db;
+	    margin-top: 10px;
+	    .cal-btn a{
+				color: #fff;
+				background: #0074e4;
+				border: none;
+		    transition: none;
+				&:hover{
+					background-color: #1b5098;
+					background: linear-gradient(to top,#0074e4,#1b5098);
+					background-repeat: repeat-x;
+					color: #fff;
+				}
+	    }
     }
     .cal-payment{
     	font-size: 25px;
@@ -80,24 +99,26 @@
 					padding-right: 22px;
 				}
 				.text-left{
-					left: 0;
+					left: 6px;
 				}
 				.text-right{
-					right: 0;
+			    right: 6px;
+				}
+				.text-left, .text-right{
+					position: absolute;
+    			top: 4px;
+			    color: #999;
 				}
 				.triangle{
 		      position: absolute;
-			    right: 3px;
+			    right: 6px;
 			    display: block;
 			    width: 5px;
 			    height: 5px;
 			    border-right: 4px solid transparent;
 			    border-left: 4px solid transparent;
-			    border-top: 6px solid #000;
-			    top: 12px;
-				}
-				.text-left, .text-right{
-					position: absolute;
+			    border-top: 6px solid #999;
+			    top: 13px;
 				}
 			}
 		}
@@ -116,6 +137,10 @@
 			    width: 35%;
 				}
  			}
+		}
+		.advanced{
+			text-align: center;
+			color: $primary-color;
 		}
 	}
 }
