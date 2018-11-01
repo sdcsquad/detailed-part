@@ -159,6 +159,13 @@
       top: 27px;
     }
   }
+  @media (max-width: 768px){
+    position: fixed;
+    width: 100%;
+    border-radius: 0;
+    right: 0;
+    top: 30%;
+  }
 }
 .tooltip-overlay{
   position: fixed;
