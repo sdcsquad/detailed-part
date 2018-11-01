@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import DetailHead from './components/DetailHead.jsx';
 import FollowingContents from './components/FollowingContents.jsx';
+import '../dist/style.css';
+
 
 class App extends React.Component {
   constructor(props) {
@@ -11,7 +13,8 @@ class App extends React.Component {
       isCal: false,
       overlay: false,
       opacityBool: false,
-      opacity: 0
+      opacity: 0,
+      tooltip: false
     };
 
     // this.handleOutSide = this.handleOutSide.bind(this);
