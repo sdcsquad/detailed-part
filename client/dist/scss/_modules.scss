@@ -14,6 +14,13 @@
   }
   .module-text{
     float: left;
+    width: 60%;
+    .body{
+      white-space: nowrap;
+      width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   }
   .detail-module-title{
     color: lighten(#000, 60%);
