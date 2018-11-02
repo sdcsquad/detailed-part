@@ -4,9 +4,6 @@ const router = express.Router();
 const Detail = require('../../db/Detail.js');
 const UserRequest = require('../../db/UserRequest.js');
 
-// app.use(bodyParser.urlencoded({ extended: true }));
-// app.use(bodyParser.json());
-
 //get all details
 router.get('/homes/all/detail-information', (req, res) => {
   Detail.find({})
@@ -52,13 +49,16 @@ router.post('/user-request', (req, res) => {
   // stack.push(data);
   UserRequest.findOne({ phone: eachPhone })
     .then(result => {
-      if(!result){
+      if(!eachPhone){
+          throw 'Please Fill the Form';
+      }else if(!result){
         UserRequest.create(data)
-          .then( res => {
-            console.log(res);
+          .then( result => {
+            console.log('SEND OK: ', result);
+            res.send(result);
           })
         }else{
-          throw ('user exist')
+          throw 'user exist';
         }
     })
     .catch(err => {

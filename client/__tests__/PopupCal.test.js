@@ -18,6 +18,10 @@ describe('<PopupCal />', () => {
 		resultPrice: '',
 	};
 
+	it('renders without crashing', () => {
+		<PopupCal {...mock}/>
+	});
+
   it('The calculator should calculate according to the set state', () => {
   	const wrapper = shallow(<PopupCal {...mock}/>);
   	wrapper.setState(state);

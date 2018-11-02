@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Modal from './Modal.jsx';
 import axios from 'axios';
+
 
 class Aside extends React.Component {
 	constructor(props) {
@@ -13,12 +15,14 @@ class Aside extends React.Component {
 			phone: '',
 			mail: '',
 			starpercent: 10,
-			starRate: 1
+			starRate: 1,
+			sendReqOk: false,
+			sendReqOkData: ''
 		}
 		this.inputErrorChecker = this.inputErrorChecker.bind(this);
 		this.inputRouter = this.inputRouter.bind(this);
 		this.sendBuyerInfo = this.sendBuyerInfo.bind(this);
-
+		this.closeHandler = this.closeHandler.bind(this);
 	}
 
 	componentDidMount(){
@@ -56,21 +60,49 @@ class Aside extends React.Component {
 		}
 	}
 
+	getNow(now){
+	  let stack = [];
+	  for(let i = 0; i < 5; i++){
+	    stack.push(now.split(' ')[i]);
+	  }
+	  return stack.join(' ');
+	}
+
 	sendBuyerInfo(e){
 		e.preventDefault();
 		let data = {
 			name: this.state.name,
 			phone: this.state.phone,
-			mail: this.state.mail
+			mail: this.state.mail,
+			timeStamp: this.getNow(Date(Date.now()))
 		}
 		if(!this.state.nameBool || !this.state.phoneBool || !this.state.mailBool){
 			alert('Wrong Format!')
 		} else {
 			axios.post('/api/user-request', {data})
-				.then(res => {alert(res.data)})
+				.then(res => {
+					this.sendReqOkData(res.data);
+					// if(res.data.name){
+					// 	console.log(res.data)
+					// 	this.sendReqOkData(res.data);
+					// }else{
+					// 	alert(res.data);
+					// }
+				})
 		}
 	}
-
+	closeHandler(){
+		this.setState({
+			sendReqOk: false,
+			sendReqOkData: ''
+		})
+	}
+	sendReqOkData(data){
+		this.setState({
+			sendReqOk: true,
+			sendReqOkData: data
+		})
+	}
 	render(){
 		const defaultText = `I am interested in ${this.props.data.address}.`
 		const starWidth = {
@@ -151,6 +183,9 @@ class Aside extends React.Component {
 		        </p>
 		      </div>
 		    </article>
+		    {
+		    	this.state.sendReqOk ? <Modal closeHandler = {this.closeHandler} data = {this.state.sendReqOkData}/> : ''
+		    }
 		  </aside>
 		)
 	}

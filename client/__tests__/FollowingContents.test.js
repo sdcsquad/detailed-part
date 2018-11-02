@@ -13,6 +13,10 @@ describe('<FollowingContents />', () => {
 		}
 	}
 
+  it('renders without crashing', () => {
+    shallow(<FollowingContents {...mock}/>)
+  });
+
   it('should render <FollowFact />', () => {
   	const wrapper = shallow(<FollowingContents {...mock}/>);
     expect(wrapper.find(FollowFact)).to.have.lengthOf(1);

@@ -14,6 +14,10 @@ describe('<DetailHead />', () => {
 		}
 	};
 
+	it('renders without crashing', () => {
+		shallow(<DetailHead {...mock}/>);
+	});
+
   it('The price should rendered string', () => {
   	const wrapper = shallow(<DetailHead {...mock}/>);
     expect(wrapper.find('.price').text()).toEqual('$10,000');
