@@ -8,8 +8,8 @@ module.exports = {
     filename: 'bundle.js',
     path: DIST_DIR
   },
-  module: {
-    rules: [
+  module : {
+    loaders : [
       {
         test : /\.jsx?/,
         include : SRC_DIR,
@@ -17,26 +17,11 @@ module.exports = {
         query: {
           presets: ['react', 'es2015']
         }
-      }
-    ],
-    loaders: [
-      {exclude: ['node_modules'], loader: 'babel', test: /\.jsx?$/},
-      {loader: 'style-loader!css-loader', test: /\.css$/},
-      {loader: 'url-loader', test: /\.gif$/},
-      {loader: 'file-loader', test: /\.(ttf|eot|svg)$/},
+      },
+      { 
+        test: /\.css$/, 
+        loader: "style-loader!css-loader" 
+      },
     ]
-  },
-  resolve: {
-    alias: {
-      config$: './configs/app-config.js',
-      react: './vendor/react-master',
-    },
-    extensions: ['', 'js', 'jsx'],
-    modules: [
-      'node_modules',
-      'bower_components',
-      'shared',
-      '/shared/vendor/modules',
-    ],
   }
 };
