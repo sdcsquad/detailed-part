@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { shallowToJson } from 'enzyme-to-json';
 import DetailHead from '../src/components/DetailHead.jsx';
 import PopupCal from '../src/components/PopupCal.jsx';
 
@@ -15,7 +16,8 @@ describe('<DetailHead />', () => {
 	};
 
 	it('renders without crashing', () => {
-		shallow(<DetailHead {...mock}/>);
+		const output = shallow(<DetailHead {...mock}/>);
+		expect(shallowToJson(output)).toMatchSnapshot();
 	});
 
   it('The price should rendered string', () => {
