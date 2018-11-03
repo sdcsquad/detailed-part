@@ -58,7 +58,7 @@ router.post('/user-request', (req, res) => {
             res.send(result);
           })
         }else{
-          throw 'user exist';
+          throw 'You already made an offer!';
         }
     })
     .catch(err => {

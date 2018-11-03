@@ -82,12 +82,6 @@ class Aside extends React.Component {
 			axios.post('/api/user-request', {data})
 				.then(res => {
 					this.sendReqOkData(res.data);
-					// if(res.data.name){
-					// 	console.log(res.data)
-					// 	this.sendReqOkData(res.data);
-					// }else{
-					// 	alert(res.data);
-					// }
 				})
 		}
 	}
