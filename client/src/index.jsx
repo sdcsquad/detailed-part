@@ -5,7 +5,6 @@ import FollowingContents from './components/FollowingContents.jsx';
 import Aside from './components/Aside.jsx'
 import '../dist/style.css';
 
-
 class App extends React.Component {
   constructor(props) {
     super(props);

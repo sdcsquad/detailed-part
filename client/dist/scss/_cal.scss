@@ -93,16 +93,16 @@
 				input.right-type{
 					padding-right: 22px;
 				}
-				.text-left, .text-right{
-					position: absolute;
-    			top: 4px;
-			    color: #999;
-				}
 				.text-left{
 					left: 6px;
 				}
 				.text-right{
 			    right: 6px;
+				}
+				.text-left, .text-right{
+					position: absolute;
+    			top: 4px;
+			    color: #999;
 				}
 				.triangle{
 		      position: absolute;

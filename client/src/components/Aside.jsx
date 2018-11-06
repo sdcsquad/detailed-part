@@ -97,7 +97,6 @@ class Aside extends React.Component {
 			sendReqOkData: data
 		})
 	}
-	
 	render(){
 		const defaultText = `I am interested in ${this.props.data.address}.`
 		const starWidth = {

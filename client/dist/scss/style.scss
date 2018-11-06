@@ -17,7 +17,9 @@ main{
 .sub-title{
   font-size: $sub-title-font-size;
 }
+
 .body{
+  color: $body-color;
   font-size: $body-font-size;
   line-height: $regular-line-height;
 }
