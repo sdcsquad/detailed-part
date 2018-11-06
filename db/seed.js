@@ -1,5 +1,6 @@
 const db = require('./index.js');
 const Detail = require('./Detail.js');
+const UserRequest = require('./UserRequest.js');
 const faker = require('faker');
 
 const dummies = [];
@@ -74,9 +75,29 @@ for (let i = 0; i < 101; i++) {
   dummies.push(aRandomObj);
 }
 
-console.log(dummies);
 const insertDummies = function() {
   return Detail.insertMany(dummies);
 };
 
+const firstBuyers = [
+  {
+    name: faker.random.words(),
+    phone: faker.random.number({'min': 800000, 'max': 5000000}),
+    mail: faker.random.words(),
+    timeStamp: faker.date.past()
+  },
+  {
+    name: faker.random.words(),
+    phone: faker.random.number({'min': 800000, 'max': 5000000}),
+    mail: faker.random.words(),
+    timeStamp: faker.date.past()
+  }
+]
+
+
+const insertDummyBuyer = () => {
+  return UserRequest.insertMany(firstBuyers);
+}
+
 insertDummies();
+insertDummyBuyer();
