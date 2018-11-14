@@ -1,28 +1,24 @@
 const express = require('express');
+
 const router = express.Router();
-// const db = require('../../db');
 const Detail = require('../../db/Detail.js');
 const UserRequest = require('../../db/UserRequest.js');
 
-//get all details
-router.get('/homes/all/detail-information', (req, res) => {
-  Detail.find({})
-    .then(data => {
-      res.send(data);
-    });
-});
 
-//get one detail
-router.get('/homes/:index/detail-information', (req, res) => {
-  console.log(req.params);
-  Detail.findOne({_index: req.params.index})
-    .then(data => {
-      res.send(data);
-    });
-});  
+router.get('/:identifier', (req, res) => {
+  const { identifier } = req.params;
+  if (identifier.includes('home')) {
+    Detail.findOne({ name: identifier })
+      .then(data => (res.send(data)));
+  } else {
+    Detail.findOne({ _index: identifier })
+      .then(data => (res.send(data)));
+  }
+});
 
 //create a detail
 router.post('', (req, res) => {
+  res.end();
   // console.log('POST REQ IS: ', req);
   // UserRequest.insert(req.body)
   //   .then({
@@ -43,17 +39,15 @@ router.delete('/details/index/:index', (req, res) => {
 // request
 router.post('/user-request', (req, res) => {
   console.log('POST REQ IS: ', req.body);
-  let data = req.body.data;
-  let eachPhone = Number(data.phone);
-  // let stack = [];
-  // stack.push(data);
+  const { data } = req.body;
+  const eachPhone = Number(data.phone);
   UserRequest.findOne({ phone: eachPhone })
-    .then(result => {
-      if(!eachPhone){
-          throw 'Please Fill the Form';
-      }else if(!result){
+    .then((result) => {
+      if (!eachPhone) {
+        throw 'Please Fill the Form';
+      } else if (!result) {
         UserRequest.create(data)
-          .then( result => {
+          .then( (result) => {
             console.log('SEND OK: ', result);
             res.send(result);
           })

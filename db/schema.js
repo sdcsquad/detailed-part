@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
+
 const detailedSchema = new mongoose.Schema({
   _index: {type: Number},
+  name: {type: String},
   address: {type: String},
   price: {type: Number},
   body: {type: String},
@@ -8,11 +10,11 @@ const detailedSchema = new mongoose.Schema({
   details: {
     factsAndFeatures: {
       type: {type: String},
-      yearBuilt: {type: Date},
+      yearBuilt: {type: Number},
       heating: {type: String},
       cooling: {type: String},
       parking: {type: String},
-      lot: {type: Number},
+      lot: {type: String},
       daysOnZillow: {type: Date},
       pricePerSqft: {type: Number},
       saves: {type: Number}

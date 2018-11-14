@@ -1,5 +1,5 @@
-node_modules
-config.js
-bundle.js
-style.css
-coverage
+/node_modules/
+*.log
+*.DS_Store
+*.pem
+*.config.js

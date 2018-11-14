@@ -1,7 +1,9 @@
 module.exports = {
-  extends: 'hackreactor',
-  rules: {
-    // Rules here will override the 'hackreactor' configuration
-    // http://eslint.org/docs/rules/
-  }
+  "parser": "babel-eslint",
+  "extends": ["airbnb-base", 'plugin:react/recommended'],
+  "env": {
+    "browser": true,
+    "node": true,
+    "jest": true,
+  },
 };

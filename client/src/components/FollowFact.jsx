@@ -23,7 +23,7 @@ const FollowFact = ({factsAndFeatures}) => (
                         </div>
                         <div className="module-text">
                             <div className="label">Year Built</div>
-                            <div className="body">{moment(factsAndFeatures.yearBuilt).fromNow()}</div>
+                            <div className="body">{(factsAndFeatures.yearBuilt)}</div>
                         </div>
                     </div>
                     <div className="feature-module zlw-lg-1-3 zlw-sm-1-2">

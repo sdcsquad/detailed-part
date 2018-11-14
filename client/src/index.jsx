@@ -9,7 +9,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-    	data: null,
+      data: null,
       isCal: false,
       overlay: false,
       opacityBool: false,
@@ -22,11 +22,11 @@ class App extends React.Component {
     this.showCal = this.showCal.bind(this);
     this.bodyShrinker = this.bodyShrinker.bind(this);
     this.sectionShrinker = this.sectionShrinker.bind(this);
-	}
+  }
 
-  componentDidMount(){
-    let idx = Math.floor(Math.random() * (101 - 1)) + 1;
-    this.getOne(idx);
+  componentDidMount() {
+    const apiRoute = `/api${window.location.pathname}`;
+    this.getOne(apiRoute);
   }
 
   showCal(){
@@ -61,14 +61,10 @@ class App extends React.Component {
     })
   }
 
-  getOne(index){
-    fetch(`/api/homes/${index}/detail-information`)
+  getOne(apiRoute) {
+    fetch(apiRoute)
       .then(res => res.json())
-      .then(json => {
-        this.setState({
-          data: json
-        })
-      })
+      .then(json => (this.setState({ data: json })));
   }
 
   render(){
