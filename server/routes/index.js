@@ -4,14 +4,14 @@ const Detail = require('../../db/Detail.js');
 const router = express.Router();
 
 const queryIdOrName = (req) => {
-  const { identifier } = req.params;
-  if (identifier.includes('home')) {
-    return { name: identifier };
+  const { homeIdentifier } = req.params;
+  if (homeIdentifier.includes('home')) {
+    return { name: homeIdentifier };
   }
-  return { _index: identifier };
+  return { _index: homeIdentifier };
 };
 
-router.get('/:identifier', (req, res) => {
+router.get('/:homeIdentifier', (req, res) => {
   Detail.findOne(queryIdOrName(req))
     .then(data => (res.send(data)));
 });
@@ -21,12 +21,17 @@ router.post('/', (req, res) => {
     .then(() => (res.end()));
 });
 
-router.put('/:identifier', (req, res) => {
+router.put('/:homeIdentifier', (req, res) => {
   Detail.findOneAndUpdate(queryIdOrName(req), req.body)
     .then(() => (res.end()));
 });
 
-router.delete('/:identifier', (req, res) => {
+router.patch('/:homeIdentifier', (req, res) => {
+  Detail.findOneAndUpdate(queryIdOrName(req), req.body)
+    .then(() => (res.end()));
+});
+
+router.delete('/:homeIdentifier', (req, res) => {
   Detail.deleteOne(queryIdOrName(req))
     .then(() => (res.end()));
 });
