@@ -17,11 +17,10 @@ https://www.zillow.com/homedetails/300-State-Route-28-Crystal-Bay-NV-89402/94715
 
 # API Routes
 
-|     Method    |          Endpoint          |                     Description                     |
-| ------------- | -------------------------  | ----------------------------------------------------|
-|      Get      | /api/homes/:homeIdentifier | get all the detailed information on a specific home |
-|               |                            | listing, idenfied by listing ID or name             |
-|      Post     |        /api/homes/         | add a home listing                                  |
-|      Put      | /api/homes/:homeIdentifier | replace a home listing's details                    |
-|     Patch     | /api/homes/:homeIdentifier | update a home listing's details                     |
-|     Delete    | /api/homes/:homeIdentifier | delete a home listing's details                     |
+|     Method    |          Endpoint          |                     Description          |
+| ------------- | -------------------------  | -----------------------------------------|
+|      Get      | /api/homes/:homeIdentifier | get a specific home listing's details    |
+|      Post     |        /api/homes/         | add a home listing                       |
+|      Put      | /api/homes/:homeIdentifier | replace a home listing's details         |
+|     Patch     | /api/homes/:homeIdentifier | update a home listing's details          |
+|     Delete    | /api/homes/:homeIdentifier | delete a home listing's details          |
