@@ -1,7 +1,7 @@
 const fs = require('fs');
 const randomize = require('./randomDataGenerator.js');
 
-const seedToCSV = (fileName, rowsToGenerate) => {
+const seedCSV = (fileName, rowsToGenerate) => {
   const stopWatch = Date.now();
   const file = fs.createWriteStream(`./${fileName}.csv`);
   const innerLoopRotations = rowsToGenerate / 100;
@@ -17,13 +17,13 @@ const seedToCSV = (fileName, rowsToGenerate) => {
     return true;
   };
 
-  (async () => {
+  const writeToCSV = async () => {
     for (let i = 0; i < 100; i += 1) {
       for (let j = 1; j <= innerLoopRotations; j += 1) {
-        const aRandomObj = randomize();
-        aRandomObj._index = (innerLoopRotations * i) + j;
-        aRandomObj.name = `home${aRandomObj._index}`;
-        const res = drainingWrite(file, Object.values(aRandomObj).join('|').concat('\n'));
+        const dataObj = randomize();
+        dataObj._index = (innerLoopRotations * i) + j;
+        dataObj.name = `home${dataObj._index}`;
+        const res = drainingWrite(file, Object.values(dataObj).join('|').concat('\n'));
         if (res instanceof Promise) {
           await res;
         }
@@ -31,7 +31,9 @@ const seedToCSV = (fileName, rowsToGenerate) => {
       console.log(`${i + 1}%`);
     }
     console.log(`Time to completion: ${(Date.now() - stopWatch) / 60000}`);
-  })();
+  };
+
+  writeToCSV();
 };
 
-seedToCSV('data', 10000000);
+seedCSV('data', 10000000);
