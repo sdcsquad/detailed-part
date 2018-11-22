@@ -1,5 +1,5 @@
 const express = require('express');
-const Detail = require('../../db/Detail.js');
+const db = require('../../db/index.js');
 
 const router = express.Router();
 
@@ -12,8 +12,13 @@ const queryIdOrName = (req) => {
 };
 
 router.get('/:homeIdentifier', (req, res) => {
-  Detail.findOne(queryIdOrName(req))
-    .then(data => (res.send(data)));
+  const query = 'SELECT * FROM details WHERE id = 1';
+  db.execute(query)
+    .then((data) => {
+      console.log(data.rows[0]);
+      res.send(data.rows[0]);
+    })
+    .catch(err => (console.log(err)));
 });
 
 router.post('/', (req, res) => {

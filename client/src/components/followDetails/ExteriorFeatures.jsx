@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ExteriorFeatures = ({data}) => (
+const ExteriorFeatures = ({ data }) => (
 	<div>
 		<div className="detail-title">
             exterior features
@@ -12,11 +12,11 @@ const ExteriorFeatures = ({data}) => (
                         <div className="label">Lot</div>
                         <div className="body">
                             <span className="detail-module-title">lot: </span>
-                            {data.lot.lot}
+                            {data.ef_lot}
                         </div>
                         <div className="body">
                             <span className="detail-module-title">Lot Width: </span>
-                            {data.lot.lotWidth}
+                            {data.ef_lotwidth}
                         </div>
                     </div>
                 </div>
@@ -25,7 +25,7 @@ const ExteriorFeatures = ({data}) => (
                         <div className="label">Other Exterior Features</div>
                         <div className="body">
                             <span className="detail-module-title">Parcel #: </span>
-                            {data.other}
+                            {data.ef_other}
                         </div>
                     </div>
                 </div>
