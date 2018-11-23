@@ -68,7 +68,7 @@ const FollowFact = ({ data }) => (
                         </div>
                         <div className="module-text">
                             <div className="label">Days on Zillow</div>
-                            <div className="body">{moment(Date(data.ff_daysonzillow)).fromNow()}</div>
+                            <div className="body">{moment(data.ff_daysonzillow).fromNow()}</div>
                         </div>
                     </div>
                     <div className="feature-module zlw-lg-1-3 zlw-sm-1-2">

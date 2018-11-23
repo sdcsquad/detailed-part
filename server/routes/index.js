@@ -6,38 +6,45 @@ const router = express.Router();
 const queryIdOrName = (req) => {
   const { homeIdentifier } = req.params;
   if (homeIdentifier.includes('home')) {
-    return { name: homeIdentifier };
+    return { table: 'details_by_name', criteria: `name = '${homeIdentifier}'` };
   }
-  return { _index: homeIdentifier };
+  return { table: 'details', criteria: `id = ${homeIdentifier}` };
 };
 
 router.get('/:homeIdentifier', (req, res) => {
-  const query = 'SELECT * FROM details WHERE id = 1';
+  const params = queryIdOrName(req);
+  const query = `SELECT * FROM ${params.table} WHERE ${params.criteria}`;
   db.execute(query)
     .then((data) => {
-      console.log(data.rows[0]);
       res.send(data.rows[0]);
     })
     .catch(err => (console.log(err)));
 });
 
 router.post('/', (req, res) => {
-  Detail.create(req.body)
+  const query = `INSERT INTO details (id, name, price) VALUES ${req.body}`;
+  db.execute(query)
     .then(() => (res.end()));
 });
 
 router.put('/:homeIdentifier', (req, res) => {
-  Detail.findOneAndUpdate(queryIdOrName(req), req.body)
+  const params = queryIdOrName(req);
+  const query = `UPDATE details SET ${Object.keys(req.body)} = ${Object.values(req.body)} WHERE ${params.criteria}`;
+  db.execute(query)
     .then(() => (res.end()));
 });
 
 router.patch('/:homeIdentifier', (req, res) => {
-  Detail.findOneAndUpdate(queryIdOrName(req), req.body)
+  const params = queryIdOrName(req);
+  const query = `UPDATE details SET ${Object.keys(req.body)} = ${Object.values(req.body)} WHERE ${params.criteria}`;
+  db.execute(query)
     .then(() => (res.end()));
 });
 
 router.delete('/:homeIdentifier', (req, res) => {
-  Detail.deleteOne(queryIdOrName(req))
+  const params = queryIdOrName(req);
+  const query = `DELETE FROM details WHERE ${params.criteria}`;
+  db.execute(query)
     .then(() => (res.end()));
 });
 

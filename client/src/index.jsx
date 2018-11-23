@@ -64,10 +64,7 @@ class App extends React.Component {
   getOne(apiRoute) {
     fetch(apiRoute)
       .then(res => (res.json()))
-      .then((data) => {
-        console.log(data);
-        this.setState({ data });
-      });
+      .then(data => (this.setState({ data })));
   }
 
   render(){

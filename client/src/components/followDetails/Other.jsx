@@ -12,7 +12,7 @@ const Other = ({ data }) => (
                 <div className="module-text">
                     <div className="body">
                         <span className="detail-module-title">Last sold: </span>
-                        {moment(Date(data.o_solddate)).fromNow()}
+                        {moment(data.o_solddate).fromNow()}
                     </div>
                     <div className="body">
                         <span className="detail-module-title">Price sold at: </span>

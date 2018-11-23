@@ -21,11 +21,11 @@ const Construction = ({data}) => (
                     <div className="label">Dates</div>
                     <div className="body">
                         <span className="detail-module-title">Last remodel year: </span>
-                        {moment(Date(data.c_builtin)).fromNow()}
+                        {moment(data.c_builtin).fromNow()}
                     </div>
                     <div className="body">
                         <span className="detail-module-title">Built in </span>
-                        {moment(Date(data.c_remodel)).year()}
+                        {moment(data.c_remodel).year()}
                     </div>
                 </div>
             </div>

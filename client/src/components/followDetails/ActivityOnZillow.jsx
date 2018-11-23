@@ -12,7 +12,7 @@ const ActivityOnZillow = ({data}) => (
                 <div className="module-text">
                     <div className="body">
                         <span className="detail-module-title">Days on Zillow: </span>
-                        {moment(Date(data.a_daysonzillow)).fromNow()}
+                        {moment(data.a_daysonzillow).fromNow()}
                     </div>
                     <div className="body">
                         <span className="detail-module-title">Views in the past 30 days: </span>
