@@ -4,4 +4,6 @@
 *.pem
 *.config.js
 *.csv
+*.icloud
 /db/dataCheck.js
+/newrelic.js
