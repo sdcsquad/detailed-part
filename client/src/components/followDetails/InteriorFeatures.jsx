@@ -1,6 +1,6 @@
 import React from 'react';
 
-const InteriorFeatures = ({data}) => (
+const InteriorFeatures = ({ data }) => (
 	<div>
 		<div className="detail-title">
         interior features
@@ -12,7 +12,7 @@ const InteriorFeatures = ({data}) => (
                     <div className="label">Bedsrooms</div>
                     <div className="body">
                         <span className="detail-module-title">Beds: </span>
-                        {data.bedRoom}
+                        {data.if_bedroom}
                     </div>
                 </div>
             </div>
@@ -21,7 +21,7 @@ const InteriorFeatures = ({data}) => (
                     <div className="label">Flooring</div>
                     <div className="body">
                         <span className="detail-module-title">Floor size: </span>
-                        {data.flooring}
+                        {data.if_flooring}
                     </div>
                 </div>
             </div>
@@ -30,7 +30,7 @@ const InteriorFeatures = ({data}) => (
                     <div className="label">Bathrooms</div>
                     <div className="body">
                         <span className="detail-module-title">Baths: </span>
-                        {data.bathRoom}
+                        {data.if_bathroom}
                     </div>
                 </div>
             </div>
@@ -39,7 +39,7 @@ const InteriorFeatures = ({data}) => (
                     <div className="label">Other Interior Features</div>
                     <div className="body">
                         <span className="detail-module-title">Addition size: </span>
-                        {data.other}
+                        {data.if_other}
                     </div>
                 </div>
             </div>
@@ -48,7 +48,7 @@ const InteriorFeatures = ({data}) => (
                     <div className="label">Heating and Cooling</div>
                     <div className="body">
                         <span className="detail-module-title">Heating: </span>
-                        {data.heatingAndCooling}
+                        {data.if_heatingandcooling}
                     </div>
                 </div>
             </div>
@@ -56,7 +56,7 @@ const InteriorFeatures = ({data}) => (
                 <div className="module-text">
                     <div className="label">Basement</div>
                     <div className="body">
-                        {data.basement}
+                        {data.if_basement}
                     </div>
                 </div>
             </div>

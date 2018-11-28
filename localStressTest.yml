@@ -1,0 +1,11 @@
+config:
+  processor: './localStressTest.js'
+  target: 'http://localhost:8080'
+  phases:
+    - duration: 30
+      arrivalRate: 500
+scenarios:
+- flow:
+  - function: 'generateURL'
+  - get:
+      url: '/api/homes/{{ path }}'

@@ -12,7 +12,7 @@ const SpaceAndAmenities = ({data}) => (
                         <div className="label">Size</div>
                         <div className="body">
                             <span className="detail-module-title">Unit count: </span>
-                            {data.size}
+                            {data.sm_size}
                         </div>
                     </div>
                 </div>
@@ -20,7 +20,7 @@ const SpaceAndAmenities = ({data}) => (
                     <div className="module-text">
                         <div className="label">Amenities</div>
                         <div className="body">
-                            {data.amenities}
+                            {data.sm_amenities}
                         </div>
                     </div>
                 </div>
@@ -29,7 +29,7 @@ const SpaceAndAmenities = ({data}) => (
                         <div className="label">Spaces</div>
                         <div className="body">
                             <span className="detail-module-title">Baths: </span>
-                            {data.spaces}
+                            {data.sm_spaces}
                         </div>
                     </div>
                 </div>

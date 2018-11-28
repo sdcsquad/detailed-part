@@ -5,11 +5,11 @@ import FollowDetails from './FollowDetails.jsx';
 
 const FollowingContents = ({data}) => (
   <div>
-  	<div className="following-contents">
-        <FollowFact factsAndFeatures = {data.details.factsAndFeatures}/>
-        <FollowDetails details = {data.details}/>
+    <div className="following-contents">
+        <FollowFact data = {data}/>
+        <FollowDetails data = {data}/>
     </div>
   </div>
-)
+);
 
 export default FollowingContents;

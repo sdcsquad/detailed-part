@@ -21,8 +21,8 @@ const seedCSV = (fileName, rowsToGenerate) => {
     for (let i = 0; i < 100; i += 1) {
       for (let j = 1; j <= innerLoopRotations; j += 1) {
         const dataObj = randomize();
-        dataObj._index = (innerLoopRotations * i) + j;
-        dataObj.name = `home${dataObj._index}`;
+        dataObj.id = (innerLoopRotations * i) + j;
+        dataObj.name = `home${dataObj.id}`;
         const res = drainingWrite(file, Object.values(dataObj).join('|').concat('\n'));
         if (res instanceof Promise) {
           await res;
@@ -36,4 +36,4 @@ const seedCSV = (fileName, rowsToGenerate) => {
   writeToCSV();
 };
 
-seedCSV('data', 10000000);
+seedCSV('data', 100);

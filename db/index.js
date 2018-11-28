@@ -1,7 +1,5 @@
-const mongoose = require('mongoose');
+const cassandra = require('cassandra-driver');
 
-const mongoUri = 'mongodb://localhost/detail-part';
-
-const db = mongoose.connect(mongoUri);
+const db = new cassandra.Client({ contactPoints: ['localhost'], keyspace: 'datahaus' });
 
 module.exports = db;
